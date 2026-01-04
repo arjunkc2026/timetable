@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Timetable</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- Main Content -->
+<div class="content">
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="logo">⚡ TIMETABLE</div>
+    <div class="top-actions">
+      <button class="btn blue" onclick="window.testNotification()">🔔 Test</button>
+    </div>
+  </div>
+
+  <!-- All Page Content -->
+  <div class="page-content">
+      
+      <!-- Status Card (Home Page) -->
+      <div class="status-card">
+        <div class="status-content">
+          
+          <!-- LEFT: Current Event -->
+          <div class="status-item">
+            <div class="status-label">CURRENT EVENT</div>
+            <div class="info-box">
+              <div class="info-content">
+                <div id="current-event" class="info-main-text cyan">Loading...</div>
+              </div>
+            </div>
+            <div class="info-box">
+              <div class="info-content">
+                <div class="info-label">Time Period</div>
+                <div id="current-event-period" class="info-value brown">--:-- -- - --:-- --</div>
+              </div>
+            </div>
+            <div class="info-box">
+              <div class="info-content">
+                <div class="info-label">Elapsed Time</div>
+                <div id="elapsed-time" class="info-time gold">--:--:--</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CENTER: Live & Current Time -->
+          <div class="status-item">
+            <div class="status-label">CURRENT TIME</div>
+            <div class="info-box-center">
+              <div class="info-content">
+                <div id="current-time" class="info-time gold">--:--:--</div>
+              </div>
+            </div>
+            <div class="live-indicator">
+              <div class="live-dot"></div>
+              <span style="color: #ef4444; font-weight: 700; font-size: 1.5rem;">LIVE</span>
+            </div>
+            <div class="info-box-center">
+              <div class="info-content" style="text-align: center;">
+                <div id="current-date" class="info-value blue">Loading...</div>
+                <div id="current-day" class="info-day" style="color: rgb(92, 134, 241);">--</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: Next Event -->
+          <div class="status-item">
+            <div class="status-label">NEXT EVENT</div>
+            <div class="info-box">
+              <div class="info-content">
+                <div id="next-event" class="info-main-text cyan">Loading...</div>
+              </div>
+            </div>
+            <div class="info-box">
+              <div class="info-content">
+                <div class="info-label">Time Period</div>
+                <div id="next-event-period" class="info-value brown">--:-- -- - --:-- --</div>
+              </div>
+            </div>
+            <div class="info-box">
+              <div class="info-content">
+                <div class="info-label">Remaining Time</div>
+                <div id="countdown" class="info-time gold">--:--:--</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Weekly Schedule Section -->
+      <div class="sections-grid">
+        <div class="weekly-schedule-section section collapsed gray">
+          <div class="section-header">
+            <span>📚 WEEKLY SUBJECT SCHEDULE</span>
+          </div>
+          <div class="section-content weekly-schedule-grid">
+            <!-- Sunday -->
+            <div class="day-schedule">
+              <div class="day-header">
+                <span class="day-name">Sunday</span>
+              </div>
+              <div class="day-subjects">
+                <div class="subject-item"> DBMS</div>
+                <div class="subject-item"> DSA</div>
+                <div class="subject-item"> Calculus II</div>
+                <div class="subject-item"> DBMS (P)</div>
+              </div>
+            </div>
+
+            <!-- Monday -->
+            <div class="day-schedule">
+              <div class="day-header">
+                <span class="day-name">Monday</span>
+              </div>
+              <div class="day-subjects">
+                <div class="subject-item"> Calculus II</div>
+                <div class="subject-item"> DSA (P)</div>
+                <div class="subject-item"> DBMS</div>
+                <div class="subject-item"> SEF</div>
+              </div>
+            </div>
+
+            <!-- Tuesday -->
+            <div class="day-schedule">
+              <div class="day-header">
+                <span class="day-name">Tuesday</span>
+              </div>
+              <div class="day-subjects">
+                <div class="subject-item"> JAVA</div>
+                <div class="subject-item"> DBMS</div>
+                <div class="subject-item"> SEF</div>
+                <div class="subject-item"> PNS</div>
+              </div>
+            </div>
+
+            <!-- Wednesday -->
+            <div class="day-schedule">
+              <div class="day-header">
+                <span class="day-name">Wednesday</span>
+              </div>
+              <div class="day-subjects">
+                <div class="subject-item"> DSA</div>
+                <div class="subject-item"> Calculus II</div>
+                <div class="subject-item"> JAVA</div>
+                <div class="subject-item"> PNS</div>
+              </div>
+            </div>
+
+            <!-- Thursday -->
+            <div class="day-schedule">
+              <div class="day-header">
+                <span class="day-name">Thursday</span>
+              </div>
+              <div class="day-subjects">
+                <div class="subject-item"> Extra Study</div>
+                <div class="subject-item"> DSA</div>
+                <div class="subject-item"> JAVA (P)</div>
+                <div class="subject-item"> SEF</div>
+              </div>
+            </div>
+
+            <!-- Friday -->
+            <div class="day-schedule">
+              <div class="day-header">
+                <span class="day-name">Friday</span>
+              </div>
+              <div class="day-subjects">
+                <div class="subject-item"> JAVA</div>
+                <div class="subject-item"> PNS</div>
+                <div class="subject-item"> Calculus II</div>
+                <div class="subject-item"> Extra Study</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Morning & Evening Sections -->
+      <div class="sections-grid">
+        <!-- Morning Section -->
+        <div class="section morning collapsed gray">
+          <div class="section-header">
+            <span>🌅 MORNING</span>
+          </div>
+          <div class="section-content">
+            <div class="session"><div class="session-info"><div class="activity">Freshing up</div><div class="duration">20 minutes</div></div><div class="time">5:00 - 5:20 AM</div></div>
+            <div class="session"><div class="session-info"><div class="activity">Subject 1</div><div class="duration">50 minutes</div></div><div class="time">5:20 - 6:10 AM</div></div>
+            <div class="session"><div class="session-info"><div class="activity">Short break</div><div class="duration">5 minutes</div></div><div class="time">6:10 - 6:15 AM</div></div>
+            <div class="session"><div class="session-info"><div class="activity">Subject 2</div><div class="duration">50 minutes</div></div><div class="time">6:15 - 7:05 AM</div></div>
+            <div class="session"><div class="session-info"><div class="activity">Morning walk</div><div class="duration">40 minutes</div></div><div class="time">7:05 - 7:45 AM</div></div>
+            <div class="session"><div class="session-info"><div class="activity">Subject 3</div><div class="duration">50 minutes</div></div><div class="time">7:45 - 8:35 AM</div></div>
+            <div class="session"><div class="session-info"><div class="activity">Short break</div><div class="duration">5 minutes</div></div><div class="time">8:35 - 8:40 AM</div></div>
+            <div class="session"><div class="session-info"><div class="activity">Subject 4</div><div class="duration">50 minutes</div></div><div class="time">8:40 - 9:30 AM</div></div>
+            <div class="session"><div class="session-info"><div class="activity">Lunch</div><div class="duration">30 minutes</div></div><div class="time">9:30 - 10:00 AM</div></div>
+          </div>
+        </div>
+
+        <!-- Evening Section -->
+        <div class="section evening collapsed gray">
+          <div class="section-header">
+            <span>🌇 DAY AND EVENING</span>
+          </div>
+          <div class="section-content">
+            <div class="session"><div class="session-info"><div class="activity">College Time</div><div class="duration">7 hours</div></div><div class="time">10:00 AM - 5:00 PM</div></div>
+            <div class="session"><div class="session-info"><div class="activity">Evening snack</div><div class="duration">20 minutes</div></div><div class="time">5:00 - 5:20 PM</div></div>
+            <div class="session"><div class="session-info"><div class="activity">Subject 1</div><div class="duration">50 minutes</div></div><div class="time">5:20 - 6:10 PM</div></div>
+            <div class="session"><div class="session-info"><div class="activity">Short break</div><div class="duration">5 minutes</div></div><div class="time">6:10 - 6:15 PM</div></div>
+            <div class="session"><div class="session-info"><div class="activity">Subject 2</div><div class="duration">50 minutes</div></div><div class="time">6:15 - 7:05 PM</div></div>
+            <div class="session"><div class="session-info"><div class="activity">Dinner</div><div class="duration">10 minutes</div></div><div class="time">7:05 - 7:15 PM</div></div>
+            <div class="session"><div class="session-info"><div class="activity">Subject 3</div><div class="duration">50 minutes</div></div><div class="time">7:15 - 8:05 PM</div></div>
+            <div class="session"><div class="session-info"><div class="activity">Short break</div><div class="duration">5 minutes</div></div><div class="time">8:05 - 8:10 PM</div></div>
+            <div class="session"><div class="session-info"><div class="activity">Subject 4</div><div class="duration">50 minutes</div></div><div class="time">8:10 - 9:00 PM</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sleep Section -->
+      <div class="section sleep sleep-section collapsed gray" >
+        <div class="section-header">
+          <span>🌙 SLEEP</span>
+        </div>
+        <div class="section-content">
+          <div class="session sleep-session">
+            <div class="session-info">
+              <div class="activity">Sleep Time</div>
+              <div class="duration">8 hours of rest</div>
+            </div>
+            <div class="time">9:00 PM - 5:00 AM</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    
+  </div>
+
+  <!-- Footer -->
+  <div style="margin-top: 60px; padding: 30px 0; text-align: center; border-top: 1px solid var(--border);">
+    <div style="font-size: 0.9rem; color: var(--text-dim); margin-bottom: 8px;">
+      Crafted with 💜 by
+    </div>
+    <div style="font-size: 1.8rem; font-weight: 800; color: var(--accent); letter-spacing: 2px; margin-bottom: 8px;">
+      ARJUN KC
+    </div>
+    <div style="font-size: 0.85rem; color: var(--text-dim); opacity: 0.7;">
+      © 2025 • All Rights Reserved
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
