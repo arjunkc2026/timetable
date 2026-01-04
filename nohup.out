@@ -1,0 +1,10 @@
+
+> timetable-electron@1.0.0 start
+> electron .
+
+[24063:0104/194227.698201:ERROR:content/browser/network_service_instance_impl.cc:613] Network service crashed, restarting service.
+
+> timetable-electron@1.0.0 start
+> electron .
+
+[24490:0104/194558.030750:ERROR:content/browser/network_service_instance_impl.cc:613] Network service crashed, restarting service.
